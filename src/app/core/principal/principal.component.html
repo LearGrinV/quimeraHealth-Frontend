@@ -1,0 +1,194 @@
+<div class="min-h-screen bg-gray-900 text-white">
+    <!-- Imagen junto con el inicio de sesion -->
+    <header class="relative h-screen flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <a class="absolute top-4 right-4 text-xl text-white px-4 py-2 bg-purple-600 bg-opacity-60 rounded-lg z-10 hover:bg-opacity-100 hover:scale-105 transition-transform cursor-pointer"
+                (click)="abrirModalInicioSesion()">Iniciar sesion </a>
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920"
+                alt="Gym Background" class="w-full h-full object-cover opacity-40" />
+        </div>
+        <div class="relative z-10 text-center px-4">
+            <div class="flex items-center justify-center mb-6">
+
+                <h1 class="text-5xl font-bold">Quimera Health</h1>
+            </div>
+            <p class="text-xl text-gray-300 mb-8">Transforma tu cuerpo, transforma tu vida</p>
+            <!-- <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-semibold transition-all">
+          Inicia tus clases
+        </button> -->
+        </div>
+    </header>
+
+    <!-- Informacion del desarrollo en el gimnasio -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+
+                    <h3 class="text-xl font-semibold mb-2">Entrenadores Profesionales</h3>
+                    <p class="text-gray-400">Profesionales con experiencia en entrenamiento personalizado</p>
+                </div>
+                <div class="text-center p-6">
+
+                    <h3 class="text-xl font-semibold mb-2">Equipamiento</h3>
+                    <p class="text-gray-400">Lo necesario para tu mejor rendimiento</p>
+                </div>
+                <div class="text-center p-6">
+
+                    <h3 class="text-xl font-semibold mb-2">Lunes a Viernes</h3>
+                    <p class="text-gray-400">Entrenamiento en cualquier momento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informacion de los planes -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Planes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-lg p-8 transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-bold mb-4">3 clases por semana</h3>
+                    <p class="text-purple-500 text-4xl font-bold mb-6">$40.000<span class="text-lg">/mensual</span></p>
+                    <p class="text-purple-500 text-4xl font-bold mb-6">$105.000<span class="text-lg">/trimestral</span>
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">✓</span> Entrenamiento
+                            semi-personalizado</li>
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">✓</span> Equipamiento</li>
+                    </ul>
+                    <button
+                        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors">
+                        Contratar
+                    </button>
+                </div>
+
+                <div class="bg-purple-600 rounded-lg p-8 transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-bold mb-4">Full pass</h3>
+                    <p class="text-white text-4xl font-bold mb-6">$60.000<span class="text-lg">/mensual</span></p>
+                    <p class="text-white text-4xl font-bold mb-6">$150.000<span class="text-lg">/trimestral</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-white-500 mr-2">✓</span> Entrenamiento
+                            semi-personalizado</li>
+                        <li class="flex items-center"><span class="text-white-500 mr-2">✓</span> Equipamiento</li>
+                    </ul>
+                    <button class="w-full bg-white text-purple-600 hover:bg-gray-100 py-3 rounded-lg transition-colors">
+                        Contratar
+                    </button>
+                </div>
+
+                <div class="bg-gray-800 rounded-lg p-8 transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-bold mb-4">Estudiantes</h3>
+                    <p class="text-purple-500 text-4xl font-bold mb-6">$35.000<span class="text-lg">/mensual</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">✓</span> Entrenamiento
+                            semi-personalizado</li>
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">✓</span> Equipamiento</li>
+                        <li class="flex items-center"><span class="text-purple-500 mr-2">✓</span> Presentar certificado
+                            de alumno regular</li>
+                    </ul>
+                    <button
+                        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors">
+                        Contratar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Contactanos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="flex items-center">
+
+                        <p>Av. Cuarta Terraza 6009, Valle Volcanes, Puerto Montt, Chile</p>
+                    </div>
+
+                    <div class="flex items-center">
+                        <a href="https://www.instagram.com/quimera.health/" target="_blank">
+                            <img src="assets/instagram.png"
+                                class="transform hover:scale-150 transition-transform cursor-pointer">
+                        </a>
+                    </div>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-purple-500 hover:text-purple-400">
+
+                        </a>
+                        <a href="#" class="text-purple-500 hover:text-purple-400">
+
+                        </a>
+                        <a href="#" class="text-purple-500 hover:text-purple-400">
+
+                        </a>
+                    </div>
+                </div>
+                <form class="space-y-4">
+                    <input type="text" placeholder="Tu nombre"
+                        class="w-full bg-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500" />
+                    <input type="email" placeholder="Tu Correo"
+                        class="w-full bg-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500" />
+                    <textarea placeholder="Tu Mensaje" rows={4}
+                        class="w-full bg-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                    <button
+                        class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg transition-colors">
+                        Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- parte final de la pagina -->
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-4 text-center text-gray-400">
+            <p>© 2024 Quimera Health</p>
+        </div>
+    </footer>
+
+    <!-- modal inciio de sesion -->
+    <div *ngIf="mostrarModal" class="fixed inset-0 z-20 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white w-96 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Iniciar sesión</h2>
+    
+            <!-- Formulario -->
+            <form (submit)="iniciarSesion()">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Correo electrónico</label>
+                    <input type="email"
+                            class="w-full border border-gray-300 rounded-lg p-2 text-black focus:border-purple-600 focus:ring-1 focus:ring-purple-600" 
+                            [class]="datosIncorrectos ? 'animate-sacudirInput border-red-500' : ''"
+                            [(ngModel)]="email"
+                            #inputCorreoElectronico
+                        name="email" required />
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Contraseña</label>
+                    <input type="password" 
+                            class="w-full border border-gray-300 rounded-lg p-2 text-black focus:border-purple-600 focus:ring-1 focus:ring-purple-600" 
+                            [class]="datosIncorrectos ? 'animate-sacudirInput border-red-500' : ''"
+                            [(ngModel)]="password"
+                        name="password" required />
+                </div>
+                <div *ngIf="datosIncorrectos" class="flex justify-center">
+                    <label class="block text-red-400">Datos incorrectos</label>
+                </div>
+                <div class="flex justify-between">
+                    <button type="submit" 
+                            class=" text-gray-400 px-4 py-2 rounded-lg cursor-no-drop " 
+                            [class]="email.length > 0 && password.length > 0 ? 'hover:bg-purple-700 bg-purple-600 text-white cursor-pointer': null"
+                            (click)="email.length > 0 && password.length > 0 ? iniciarSesion(): null">
+                        Iniciar sesión
+                    </button>
+                    <button type="button" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400" 
+                        (click)="cerrarModalInicioSesion()">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
