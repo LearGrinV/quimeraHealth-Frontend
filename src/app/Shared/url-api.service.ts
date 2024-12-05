@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class UrlApiService {
 
   /* API */
-  url = "https://bdbl06jr-8000.brs.devtunnels.ms";
+  url = "http://127.0.0.1:8000";
 
   constructor() { }
 }
