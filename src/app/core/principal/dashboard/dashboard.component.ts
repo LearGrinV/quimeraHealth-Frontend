@@ -1,22 +1,35 @@
-import { Component } from '@angular/core';
+import { afterNextRender, Component } from '@angular/core';
 import { FlowbiteService } from '../../../Shared/flowbite.service';
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { SesionService } from '../../../Shared/sesion.service';
+import { PasswordComponent } from "../password/password.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, PasswordComponent,CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {  
+
+  passwordConfirmed : boolean = false;
   
   constructor(private flowbiteService:FlowbiteService,
               private router:Router,
               private sesionService:SesionService
-            ){}
+            ){
+              afterNextRender(() => {
+                this.flowbiteService.loadFlowbite((flowbite) => {
+                  console.log('Flowbite loaded', flowbite);
+                });
+              });
+
+              sesionService.cargarCredenciales()
+              this.passwordConfirmed = this.sesionService.mailConfirmed ? false : true
+            }
 
   ngOnInit(){
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC

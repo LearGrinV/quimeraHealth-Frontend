@@ -196,6 +196,9 @@ export class PrincipalComponent {
           this.sesionService.nombre = dataUsuario.user.nombre
           this.sesionService.idUser = dataUsuario.user.id
           this.sesionService.token = data.token
+          this.sesionService.mailConfirmed = dataUsuario.user.mail_confirmed
+          this.sesionService.clasesMembresia = dataUsuario.user.clasesMembresia
+          this.sesionService.clasesReservadas  = dataUsuario.user.clasesReservadas
           this.sesionService.guardarCredenciales(); // Guardar las credenciales en el LocalStorage
           this.router.navigate(['/']).then(() => {
             window.location.reload();
