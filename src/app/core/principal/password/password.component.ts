@@ -34,7 +34,7 @@ export class PasswordComponent {
     this.http.put(this.apiActualizarPassword + this.sesionService.idUser,form).subscribe( (data:any) =>{
       this.sesionService.actualizarPassword(data.res.email_verified_at)
       this.router.navigate(['/']).then(() => {
-        window.location.reload();
+        window.location.href = '/';
       });
       }
     )

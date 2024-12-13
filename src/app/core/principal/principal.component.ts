@@ -201,7 +201,7 @@ export class PrincipalComponent {
           this.sesionService.clasesReservadas  = dataUsuario.user.clasesReservadas
           this.sesionService.guardarCredenciales(); // Guardar las credenciales en el LocalStorage
           this.router.navigate(['/']).then(() => {
-            window.location.reload();
+            window.location.href = '/';
           });
         }
       }else{
