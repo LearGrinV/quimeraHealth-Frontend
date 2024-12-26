@@ -211,4 +211,9 @@ export class PrincipalComponent {
     });
 
   }
+
+  // Funcion encargada de redireccionar
+  abrirInstagram(){
+    window.open('https://www.instagram.com/quimerahealth/', '_blank');
+  }
 }

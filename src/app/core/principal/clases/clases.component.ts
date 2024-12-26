@@ -47,6 +47,7 @@ export class ClasesComponent {
                     console.log('Flowbite loaded', flowbite);
                   });
                 });
+                
                 // this.http.get(this.apiRutaClases).subscribe((datos:any)=> this.clasesDisponibles = datos.clases)
                 this.clasesMembresia = this.sesionService.clasesMembresia
                 // Convertir en json valido el this.sesionService.clasesReservadas

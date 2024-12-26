@@ -45,7 +45,8 @@
 <!-- <div class="bg-white rounded-lg shadow-lg overflow-hidden"> -->
 <div class="p-6 grid w-auto min-w-40">
         <h2 class="text-2xl font-bold mb-4 text-center">Clases semanal </h2>
-        <label class="text-lg mb-4 text-center"> {{clasesRestantes}} de {{clasesMembresia}} clases disponibles</label>
+        <label class="text-lg mb-4 text-center" *ngIf="clasesRestantes>0"> {{clasesRestantes}} de {{clasesMembresia}} clases disponibles esta semana</label>
+        <label class="text-lg mb-4 text-center" *ngIf="clasesRestantes==0"> Ya no tienes clases disponibles</label>
     <!-- Calendarior Header -->
     <div class="grid grid-cols-7 bg-gray-100">
         <div class="p-4 font-semibold text-gray-700 border-b border-r border-gray-200">Hora</div>
