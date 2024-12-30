@@ -26,6 +26,8 @@ export class ClasesComponent {
   horasMañana = ['07:00', '08:00', '09:00', '10:00', '11:00', '12:00'];
   horasTarde = ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
   horas = [...this.horasMañana, ...this.horasTarde];
+  clases: any[] = []; // Esta variable almacenara las clases del calendario, con el fin de identificar el cupo disponible y los usuarios
+  usuarios : any[] = [];
 
   clasesMembresia : number = 0
   clasesRestantes : number = 0
@@ -38,6 +40,7 @@ export class ClasesComponent {
 
   // Rutas
   apiRutaClases = this.urlApi.url + '/api/clasesDisponibles'
+  apiRutaCalendario = this.urlApi.url + '/api/calendarioBcnd'
   apiAlmacenarClases = this.urlApi.url + '/api/almacenarClases/'
 
   constructor(private flowbiteService:FlowbiteService
@@ -48,12 +51,29 @@ export class ClasesComponent {
                   });
                 });
                 
-                // this.http.get(this.apiRutaClases).subscribe((datos:any)=> this.clasesDisponibles = datos.clases)
+                this.http.get(this.apiRutaCalendario).subscribe((datos:any)=> this.clases = datos)
                 this.clasesMembresia = this.sesionService.clasesMembresia
                 // Convertir en json valido el this.sesionService.clasesReservadas
                 this.sesionService.clasesReservadas != 0 ? this.clasesSeleccionadas = (JSON.parse(this.sesionService.clasesReservadas)) : null
                 this.clasesRestantes = this.clasesMembresia - this.clasesSeleccionadas.length
               }
+
+  claseExistente(dia: string, hora: string): boolean {
+    // Si this.reservado(dia,hora) devuelve un true retornara un false
+    return !this.reservado(dia,hora) ? this.clases.some(clase => clase.dia === dia && clase.hora === hora) : false ;
+  }
+
+  // Método para obtener los cupos disponibles
+  getCuposDisponibles(dia: string, hora: string): number {
+    const clase = this.clases.find(c => c.dia === dia && c.hora === hora);
+    clase.usuarios ?? JSON.parse(clase.usuarios)
+    if(clase.usuarios == ""){
+      return clase ? clase.cupos - clase.usuarios.length : 0;
+
+    }
+    const usuarios = clase.usuarios.split(',').length;
+    return clase ? clase.cupos - usuarios : 0;
+  }
 
   // Array para almacenar las clases seleccionadas
   clasesSeleccionadas: { dia: string; hora: string; }[] = [];
@@ -78,7 +98,8 @@ export class ClasesComponent {
   almacenarClase(dia: string, hora: string): void {
     if (this.libre(dia) && !this.reservado(dia, hora)) {
       this.clasesSeleccionadas.push({ dia, hora });
-      this.http.put(this.apiAlmacenarClases + this.sesionService.idUser,this.clasesSeleccionadas).subscribe((data:any) => {
+      this.http.put(this.apiAlmacenarClases + this.sesionService.idUser + '/' + dia + '/' + hora,this.clasesSeleccionadas).subscribe((data:any) => {
+        console.log(data)
         this.sesionService.actualizarClasesReservadas(data.res.clasesReservadas)
         this.mostrarModalConfirmacion = false
         this.clasesRestantes = this.clasesRestantes - 1
@@ -91,6 +112,12 @@ export class ClasesComponent {
     this.diaConfirmacion = dia
     this.horaConfirmacion = hora
     this.mostrarModalConfirmacion = true
+
+    const clase = this.clases.find(c => c.dia === dia && c.hora === hora);
+
+    clase.usuarios != "" ?  this.usuarios = JSON.parse(clase.usuarios) : this.usuarios = []
+  
   }
+
 }
 

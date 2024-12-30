@@ -74,13 +74,16 @@
                     [class.cursor-pointer]="!reservado(dia, hora) && libre(dia)"
                     [class.cursor-not-allowed]="reservado(dia, hora) || !libre(dia)" (click)="libre(dia) ? activarModalConfirmacion(dia,hora) : null">
 
-                    <div class="h-full flex items-center justify-center">
+                    <div class="h-full flex flex-col items-center justify-center">
                         <div *ngIf="reservado(dia, hora)" class="text-emerald-700 font-medium">
                             Reservado
                         </div>
                         <div *ngIf="!reservado(dia, hora)" class="text-gray-600"
                             [class.group-hover:text-emerald-600]="libre(dia)">
-                            {{ libre(dia) ? 'Disponible' : 'No disponible' }}
+                            {{ libre(dia) ? 'disponible' : 'No disponible' }}
+                        </div>
+                        <div  *ngIf="claseExistente(dia, hora)" class=" bg-emerald-100 rounded-lg  p-2 text-sm font-semibold">
+                            {{ getCuposDisponibles(dia, hora) }} cupos disponibles
                         </div>
                     </div>
 
@@ -97,8 +100,15 @@
 <div *ngIf="mostrarModalConfirmacion" class="fixed inset-0 z-20 bg-black bg-opacity-50 flex items-center justify-center">
     <div class="bg-white w-96 p-6 rounded-lg shadow-lg">
         <h2 class="text-xl font-semibold text-gray-800 mb-4">Confirmar Hora {{diaConfirmacion}} {{horaConfirmacion}}</h2>
-        <div class="grid grid-flow-col justify-between">
-            <a class="bg-green-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-green-400 cursor-pointer" (click)="almacenarClase(diaConfirmacion, horaConfirmacion)"> confirmar</a>
+        <div class="h-64">
+            <h2 class="text-xl font-semibold tex-gray-800 mb-4"> Participantes</h2>
+
+            <div class=" rounded-lg bg-indigo-100 p-2 h-60 overflow-y-auto flex flex-col gap-5">
+                <label *ngFor="let usuario of usuarios; let i = index"> {{i + 1}}. {{usuario}}</label>
+            </div>
+        </div>
+        <div class="grid grid-flow-col justify-between pt-10">
+            <a class="bg-green-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-green-400 cursor-pointer" (click)="almacenarClase(diaConfirmacion, horaConfirmacion)"> Confirmar</a>
             <a class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 cursor-pointer" (click)="mostrarModalConfirmacion = false">Cancelar</a>
         </div>
     </div>
