@@ -1,0 +1,99 @@
+<div class="min-h-screen flex items-center justify-center p-4">
+        <div class="bg-[#35372F] text-[#EBE8D2] rounded-lg shadow-xl overflow-hidden w-full max-w-4xl">
+            <div class="md:flex">
+            
+                <div class="md:w-1/3 bg-[#281615] p-6 text-center grid">
+                    <!-- <img class="w-32 h-32 rounded-full mx-auto border-4 border-[#963F43]"
+                        src="" alt="Foto de perfil" /> -->
+                    <h2 class="mt-4 text-2xl font-bold">{{user.name}}</h2>
+                    <p class="mt-2 text-sm">{{user.membresia.nombre}}</p>
+                    <!-- <div class="mt-4 flex items-center justify-center text-sm">
+                        
+                        <span>Madrid, España</span>
+                    </div> -->
+                    <!-- <button
+                        class="mt-6 bg-[#963F43] text-white py-2 px-4 rounded-full hover:bg-[#7A3235] transition duration-300">
+                        Editar Perfil
+                    </button> -->
+                </div>
+
+                
+                <div class="md:w-2/3 p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            
+                            <span>{{user.name}}</span>
+                        </div>
+                        <div class="flex items-center">
+                            
+                            <span>{{user.email}}</span>
+                        </div>
+                        <div class="flex items-center">
+                            
+                            <span>Miembro desde {{user.created_at | date: 'MMMM-yyyy'}}</span>
+                        </div>
+                        <div class="flex items-center">
+                            
+                            <!-- <span>Entrenador: Carlos Ruiz</span> -->
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-2">Objetivos de fitness</h3>
+                        <p class="text-sm">
+                            Aumentar masa muscular, mejorar resistencia cardiovascular y mantener una dieta equilibrada.
+                            Preparándome para mi primera competencia de fitness en 6 meses.
+                        </p>
+                    </div>
+
+                    <!-- <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-2">Estadísticas de entrenamiento</h3>
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div class="bg-[#281615] p-2 rounded">
+                                <div class="text-2xl font-bold">87</div>
+                                <div class="text-xs">Sesiones este mes</div>
+                            </div>
+                            <div class="bg-[#281615] p-2 rounded">
+                                <div class="text-2xl font-bold">156</div>
+                                <div class="text-xs">Horas totales</div>
+                            </div>
+                            <div class="bg-[#281615] p-2 rounded">
+                                <div class="text-2xl font-bold">5</div>
+                                <div class="text-xs">Récords personales</div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-2">Logros recientes</h3>
+                        <div class="flex space-x-4">
+                            <div class="flex items-center">
+                                
+                                <span class="text-sm">Maratón 10K</span>
+                            </div>
+                            <div class="flex items-center">
+                                
+                                <span class="text-sm">-5% grasa corporal</span>
+                            </div>
+                            <div class="flex items-center">
+                                
+                                <span class="text-sm">30 días seguidos</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="mt-6">
+                        <h3 class="text-xl font-semibold mb-2">Redes Sociales</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-[#EBE8D2] hover:text-[#963F43] transition duration-300">
+                                
+                            </a>
+                            <a href="#" class="text-[#EBE8D2] hover:text-[#963F43] transition duration-300">
+                                
+                            </a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+</div>

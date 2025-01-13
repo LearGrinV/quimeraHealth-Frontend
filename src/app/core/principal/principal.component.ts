@@ -27,6 +27,16 @@ export class PrincipalComponent {
   mostrarModalSesion:boolean = false
   mostrarModalSuscripcion:boolean = false
 
+  // Variable de las imagenes 
+  imagenesFondo: string[] = [
+    'assets/fondo_1.jpg',
+    'assets/fondo_2.jpg',
+    'assets/fondo_3.jpg',
+    'assets/fondo_4.jpg'
+  ];
+  carruselIndex = 0;
+  intervaloId: any;
+
   // Variables para el formulario de inicio de sesion
   email: string = '';
   password: string = '';
@@ -61,6 +71,18 @@ export class PrincipalComponent {
               ){
                 this.http.get(this.apiDatos).subscribe((datos:any) => this.membresias = datos)
               }
+
+  ngOnInit(){
+    this.intervaloId = setInterval(() => {
+      this.carruselIndex = (this.carruselIndex + 1) % this.imagenesFondo.length;
+    }, 3000);
+  }
+
+  ngOnDestroy() {
+    if (this.intervaloId) {
+      clearInterval(this.intervaloId);
+    }
+  }
 
   telefono(event:any){
     var valor = event.target.value
@@ -216,4 +238,6 @@ export class PrincipalComponent {
   abrirInstagram(){
     window.open('https://www.instagram.com/quimerahealth/', '_blank');
   }
+
+
 }

@@ -89,4 +89,9 @@ export class DashboardComponent {
     this.router.navigate(['quimeraClases'])
   }
 
+  //Funcion encargada de redireccionar a mi perfil
+  abrirMiPerfil(){
+    this.router.navigate(['perfil'])
+  }
+
 }

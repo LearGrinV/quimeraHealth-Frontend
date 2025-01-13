@@ -48,10 +48,10 @@
         <label class="text-lg mb-4 text-center" *ngIf="clasesRestantes>0"> {{clasesRestantes}} de {{clasesMembresia}} clases disponibles esta semana</label>
         <label class="text-lg mb-4 text-center" *ngIf="clasesRestantes==0"> Ya no tienes clases disponibles</label>
     <!-- Calendarior Header -->
-    <div class="grid grid-cols-7 bg-gray-100">
-        <div class="p-4 font-semibold text-gray-700 border-b border-r border-gray-200">Hora</div>
+    <div class="grid grid-cols-7 bg-[#35372F]">
+        <div class="p-4 font-semibold text-white border-b border-r border-[#35372F]">Hora</div>
         <div *ngFor="let dia of dias"
-            class="p-4 font-semibold text-gray-700 text-center border-b border-r border-gray-200">
+            class="p-4 font-semibold text-white text-center border-b border-r border-[#35372F]">
             {{ dia }}
         </div>
     </div>
