@@ -82,7 +82,7 @@
                             [class.group-hover:text-emerald-600]="libre(dia)">
                             {{ libre(dia) ? 'disponible' : 'No disponible' }}
                         </div>
-                        <div  *ngIf="claseExistente(dia, hora)" class=" bg-emerald-100 rounded-lg  p-2 text-sm font-semibold">
+                        <div  *ngIf="claseExistente(dia, hora)" class=" bg-emerald-100 rounded-lg text-center p-2 text-xs font-semibold">
                             {{ getCuposDisponibles(dia, hora) }} cupos disponibles
                         </div>
                     </div>
