@@ -23,11 +23,12 @@ export class ClasesComponent {
   clasesDisponibles: any = []
 
   dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-  horasMañana = ['07:00', '08:00', '09:00', '10:00', '11:00', '12:00'];
-  horasTarde = ['15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
+  horasMañana = ['07:00', '08:00', '09:00', '10:00', '11:00'];
+  horasTarde = ['16:00', '17:00', '18:00', '19:00', '20:00'];
   horas = [...this.horasMañana, ...this.horasTarde];
   clases: any[] = []; // Esta variable almacenara las clases del calendario, con el fin de identificar el cupo disponible y los usuarios
   usuarios : any[] = [];
+  cuposDisponibles = 0
 
   clasesMembresia : number = 0
   clasesRestantes : number = 0
@@ -108,9 +109,10 @@ export class ClasesComponent {
   }
 
   // Función encargadad de activar y igualar las variables necesarias para la confirmacion 
-  activarModalConfirmacion(dia:any, hora:any){
+  activarModalConfirmacion(dia:any, hora:any, cupos:any){
     this.diaConfirmacion = dia
     this.horaConfirmacion = hora
+    this.cuposDisponibles = cupos
     this.mostrarModalConfirmacion = true
 
     const clase = this.clases.find(c => c.dia === dia && c.hora === hora);

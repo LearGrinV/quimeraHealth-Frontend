@@ -135,7 +135,7 @@ export class PrincipalComponent {
       antecedentesMedicos: this.antecedentesMedicosUsuario,
       idMembresia: this.membresiaSeleccionada.id,
       nombreMembresia : this.membresiaSeleccionada.nombre,
-      precioMebresia: this.precioMensual ? this.membresiaSeleccionada.precioMensual : this.membresiaSeleccionada.precioTrimestral,
+      precioMembresia: this.precioMensual ? this.membresiaSeleccionada.precioMensual : this.membresiaSeleccionada.precioTrimestral,
       comprobantePago: this.comprobantePago
     }
 
@@ -237,6 +237,11 @@ export class PrincipalComponent {
   // Funcion encargada de redireccionar
   abrirInstagram(){
     window.open('https://www.instagram.com/quimerahealth/', '_blank');
+  }
+
+  // Funcion encargada de redireccionar
+  abrirWhatsapp(){
+    window.open('https://wa.me/+56959740400', '_blank');
   }
 
 
